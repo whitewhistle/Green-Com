@@ -1,0 +1,10 @@
+.products
+{
+    display:flex;
+    flex-flow:wrap;
+    gap:2vw;
+    padding:5vw;
+    justify-content: space-around;
+   
+}
+
