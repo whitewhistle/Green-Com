@@ -16,7 +16,15 @@ export default function Single() {
             <div className="Price">&#8377; 499</div>
             <div className="no">Net wt: 1.00 nos</div>
             <div className="Discription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, architecto voluptate magnam error sit porro ipsum possimus autem enim sequi? Libero reprehenderit recusandae ipsa, perferendis harum minus sapiente dolorum placeat.</div>
+            <div className="cart-card">
+
+            <div className="Quantity">
+              <span>+</span>
+              <span>5</span>
+              <span>-</span>
+            </div>
             <button className="button1">Add to Cart</button>
+            </div>
             </div>
         </div>
         </div>

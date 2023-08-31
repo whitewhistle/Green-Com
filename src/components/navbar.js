@@ -1,8 +1,13 @@
 import React from 'react';
 import './navbar.css';
+import{useState} from 'react';
+import Shopingcart from './shopingcart'
+
 
 export default function Navbar() {
+  const[showCart,setShowCart]=useState(false);
   return (
+    <>
     <header className='nav'>
     <div className='navcontent'>
         <div className='left'>
@@ -19,11 +24,13 @@ export default function Navbar() {
         <div className='mid'>
         Green-Com
         </div>
-        <div className='right'>
-         random stuff
+        <div className='right' onClick={()=> setShowCart(true)}>
+         Cart
         </div>
       
     </div>
     </header>
+    {showCart && <Shopingcart setShowCart={setShowCart}/>}
+    </>
   )
 }
