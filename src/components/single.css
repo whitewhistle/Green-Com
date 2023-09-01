@@ -121,6 +121,12 @@ height:30vh;
 
   }
 
+.Singlepage-container
+{
+    display:flex;
+    justify-content: center;
+}
+
   @media (max-width: 1000px)
   { .layout
     {   display: flex;

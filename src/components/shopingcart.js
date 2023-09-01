@@ -1,7 +1,6 @@
 import React from 'react'
 import './shopingcart.css'
 import pho from '../assets/CART8.jpg';
-import{useState} from 'react';
 
 export default function Shopingcart({setShowCart}) 
 {
