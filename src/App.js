@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/navbar'
 import Product from './components/products'
 import Single from './components/single'
+import AppContext from './utils/context';
 
 
 import {
@@ -17,13 +18,15 @@ import {
 function App() {
   return (
     <Router>
+    <AppContext>
 
+   
       <Navbar/>
       <Routes>
       <Route path="/" element={<Product/>}/>
       <Route path="/single" element={<Single/>}/>
       </Routes>
-    
+      </AppContext>
     </Router>
   );
 }

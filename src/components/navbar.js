@@ -3,9 +3,27 @@ import './navbar.css';
 import{useState} from 'react';
 import Shopingcart from './shopingcart'
 import Search from './search';
+import {useEffect, useContext} from "react";
+import { fetchDataFromApi} from "../utils/api";
+
+import  {Context} from "../utils/context.js";
 
 
 export default function Navbar() {
+
+const { categories, setCategories} = useContext(Context);  
+useEffect(() => {
+  getCategories();
+}, []);
+
+const getCategories = () => {
+  fetchDataFromApi("/api/categories?populate=*").then((res) => { 
+    console.log(res);
+    setCategories(res);
+  });
+
+};
+
   const[showCart,setShowCart]=useState(false);
   const[showSearch,setShowSearch]=useState(false);
   return (
@@ -27,14 +45,8 @@ export default function Navbar() {
     <div className='navcontent'>
         <div className='left'>
         <ul>
-
-        <li>Home</li>
-        <li>|</li>
-        <li>About</li>
-        <li>|</li>
-        <li>Categories</li>
         
-        </ul>
+  </ul>
         </div>
         <div className='mid'>
         Green-Com
