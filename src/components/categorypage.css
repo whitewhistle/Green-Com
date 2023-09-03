@@ -1,0 +1,31 @@
+.products
+{
+    display:flex;
+    flex-flow:wrap;
+    gap:2vw;
+    padding:5vw;
+    justify-content: space-around;
+   
+}
+.productscontainer
+{
+    background-color: rgba(255, 255, 255, 0.648);
+}
+
+.categoryheader
+{   padding:10px;
+    display:flex;
+    justify-content: center;
+}
+
+.categoryheading
+{ 
+  font-size: 4vh;
+  font-weight: 700;
+  color:#2DB457;
+  padding-bottom:5px;
+  position:relative;
+  left:0%;
+  right:50%;
+  border-bottom: 3px solid #2DB457;
+}

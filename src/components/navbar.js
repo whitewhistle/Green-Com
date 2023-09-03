@@ -6,7 +6,7 @@ import Search from './search';
 import {useEffect, useContext} from "react";
 import { fetchDataFromApi} from "../utils/api";
 import  {Context} from "../utils/context.js";
-
+import {useNavigate} from "react-router-dom";
 
 export default function Navbar() {
 
@@ -16,6 +16,7 @@ useEffect(() => {
   getCategories();
 }, []);
 
+const navigate=useNavigate();
 
 const getCategories = () => {
 
@@ -59,8 +60,9 @@ const getCategories = () => {
         <ul>
         {categories ? (
       categories.data.map((category, index) => (
-        <React.Fragment key={category.id}>
-          <li>{category.attributes.title}</li>
+        <React.Fragment key={category.id} 
+        > 
+          <li onClick= {() => navigate(`/category/${category.attributes.title}`)}>{category.attributes.title}</li>
           {index < categories.data.length - 1 && <li>|</li>}
         </React.Fragment>
       ))
