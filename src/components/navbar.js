@@ -11,7 +11,9 @@ import {useNavigate} from "react-router-dom";
 export default function Navbar() {
 
 
-const { categories, setCategories , products, setProducts} = useContext(Context);  
+const { categories, setCategories , products, setProducts,
+  cartarray,
+  setCart,} = useContext(Context);  
 useEffect(() => {
   getCategories();
 }, []);

@@ -10,7 +10,9 @@ import {useNavigate} from "react-router-dom";
 
 export default function Products() {
   
-  const { categories, setCategories , products, setProducts} = useContext(Context);  
+  const { categories, setCategories , products, setProducts,
+    cartarray,
+    setCart,} = useContext(Context);  
   const [n, setN] = useState(Math.floor(window.innerWidth / 180));
 
   const navigate=useNavigate();

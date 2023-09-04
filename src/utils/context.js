@@ -5,12 +5,14 @@ const AppContext =({children }) => {
     const [categories, setCategories] = useState();
     const [products, setProducts] = useState();
     const [cartarray, setCart]=useState([]);
-    
+
     return <Context.Provider value ={{
     categories,
     setCategories,
     products,
-    setProducts
+    setProducts,
+    cartarray,
+    setCart,
 
     }}> 
         

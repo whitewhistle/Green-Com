@@ -1,9 +1,24 @@
 import React from 'react'
 import './shopingcart.css'
 import pho from '../assets/CART8.jpg';
+import {useEffect, useContext, useState} from "react";
+import {Context} from '../utils/context.js';
 
 export default function Shopingcart({setShowCart}) 
 {
+
+  const { categories, setCategories , products, setProducts,
+    cartarray,
+    setCart,} = useContext(Context); 
+
+    
+   let sum=0;
+
+    cartarray.forEach((cartItem) => {
+      sum=sum + cartItem.a * cartItem.price;
+    });
+  
+
   return (
     <div className={`Panel ${setShowCart ? '' : 'hide'}`}>
         <div className="opac-layer"></div>
@@ -16,22 +31,38 @@ export default function Shopingcart({setShowCart})
                X
                 </div>
             </div>
-            <div className='sub-items'>
+            
+
+            {cartarray ? (
+      
+      cartarray
+      .map((product, index) => (
+            <div className='sub-items'> 
                <div className="left">
-                <img src={pho} alt=""/>
+                <img src={product.photo} alt=""/>
                 </div>
                 <div className="right">
-                <div>product name</div>
-                <div>-5+</div>
-                <div>499</div>
+                <div>{product.item}</div>
+                <div>{product.a}</div>
+                <div>{product.price}</div>
                 </div>
             </div>
+            
+      ))
+    
+      ) : (
+        <li>Loading...</li>
+      )
+    }
+    
+    
+
             <div className="sub-total">
             <div>SUBTOTAL:</div>
-            <div className="price">&#8377;499</div>
+            <div className="price">&#8377;{sum}</div>
             </div>
+
             <div>
-            <button className="checkout">Checkout</button>
             </div>
         </div>
       

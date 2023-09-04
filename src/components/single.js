@@ -8,8 +8,52 @@ import  {Context} from "../utils/context.js";
 
 export default function Single() {
   const { productId } = useParams();
-  const { categories, setCategories , products, setProducts} = useContext(Context); 
-  const [q,setQ]=useState(1)
+  const { categories, setCategories , products, setProducts,
+    cartarray,
+    setCart,} = useContext(Context); 
+
+    const handleAddToCart = (photo, quantity, itemToAdd , price) => {
+      
+      cartarray.forEach((cartItem) => {
+        console.log("cartItem.item:", cartItem.item);
+        console.log("itemToAdd.item:", itemToAdd);
+      });
+
+      const existingCartItemIndex = cartarray.findIndex(
+        (cartItem) => cartItem.item == itemToAdd
+      );
+      
+   
+
+      const cartItem = {
+        item: itemToAdd,
+        a: quantity,
+        photo:photo,
+        price:price,
+      };
+      
+      
+      console.log(existingCartItemIndex)
+
+      if (existingCartItemIndex !== -1) {
+        const updatedCartArray = [...cartarray];
+        updatedCartArray[existingCartItemIndex].a += quantity;
+        setCart(updatedCartArray);
+      } 
+      
+
+      else {
+        setCart([...cartarray, cartItem]);
+      }
+
+    };
+
+
+  
+
+  const [q,setQ]=useState(1);
+
+  console.log(cartarray);
 
   const decrement =() =>
   {
@@ -22,9 +66,6 @@ export default function Single() {
   }
 
 
-  useEffect(() => {
-    getProducts();
-  }, []);
 
   const getProducts = () =>
   {
@@ -39,15 +80,15 @@ export default function Single() {
       });
   };
   
-
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <div className="Singlepage-container">
         <div className="layout">
-        
-        
-            
-
+  
+  
             {products ? (
       
       products.data
@@ -57,6 +98,7 @@ export default function Single() {
         < div className="singlepage" key={product.id}>
             <div className="left">
              <img src={"http://localhost:1337" + product.attributes.img.data[0].attributes.url} alt=""/>
+             
             </div>
           <div className="right">
             <div className="Name">{product.attributes.title}</div>
@@ -70,7 +112,7 @@ export default function Single() {
               <span>{q}</span>
               {<span onClick={() => q > 1 && decrement()}>-</span>}
             </div>
-            <button className="button1">Add to Cart</button>
+            <button className="button1" onClick={()=> handleAddToCart("http://localhost:1337" + product.attributes.img.data[0].attributes.url, q, product.attributes.title, product.attributes.Price)}>Add to Cart</button>
             </div>
             </div>
             </div>

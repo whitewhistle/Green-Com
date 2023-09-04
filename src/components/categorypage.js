@@ -11,7 +11,9 @@ import {useNavigate} from "react-router-dom";
 
 export default function Categorypage() {
   
-  const { categories, setCategories , products, setProducts} = useContext(Context);  
+  const { categories, setCategories , products, setProducts,
+    cartarray,
+    setCart,} = useContext(Context);  
   const { categoryId } = useParams();
 
   useEffect(() => {
