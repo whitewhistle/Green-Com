@@ -1,0 +1,84 @@
+.logincontainer
+{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-wrap:wrap;
+    align-content: center;
+    justify-content:center;
+}
+
+.loginmargin
+{
+    background-color: white;
+    padding:8px;
+    border: 2px solid rgb(0, 55, 255);
+    border-radius: 10px;
+}
+
+
+
+.loginPanel{
+    width:27vw;
+    height:38vh;
+    background-color:white ;
+    display:flex;
+    border:2px solid rgb(0, 81, 255);
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.loginPanel .title
+{   padding-top:5vh;
+    height:4vh;
+    font-weight: 600;
+    font-size: 3Svh;
+}
+
+.loginPanel .inputer
+{  height:5vh;
+   border:2px solid green;
+   display:flex;
+   padding:3px;
+   border-radius:5px;
+}
+
+.loginPanel .inputer input
+{
+    border: none;
+    outline: none;
+width:25vw;
+}
+
+.loginPanel button
+{
+    height:3.2vh;
+    display:flex;
+    flex-wrap: wrap;
+    align-content: center;
+    border:5px double black;
+    transition: border-radius 0.5s
+    
+}
+.loginPanel button:hover
+{
+    height:3.2vh;
+    font-size: 2.5vh;
+    border-radius:5px;
+    border:5px double black;
+
+}
+
+@media (max-width:1150px)
+{
+    .loginPanel{
+        width:301.5px;
+    }
+
+    .loginPanel .inputer input
+{
+    border: none;
+    outline: none;
+    width:287.5px
+}
+}

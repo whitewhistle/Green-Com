@@ -5,6 +5,13 @@ import Products from './components/products'
 import Single from './components/single'
 import AppContext from './utils/context';
 import Categorypage from './components/categorypage';
+import Login from './components/login';
+import Registration from './components/registration';
+import { Outlet } from 'react-router-dom';
+
+
+
+import Logout from './components/logout';
 
 import {
   BrowserRouter as Router,
@@ -19,14 +26,25 @@ function App() {
   return (
     <Router>
     <AppContext>
-
-   
-      <Navbar/>
-      <Routes>
-      <Route path="/" element={<Products/>}/>
-      <Route path="/single/:productId" element={<Single/>}/>
       
-      <Route path="/category/:categoryId" element={<Categorypage />}/>
+      <Routes>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/logout" element={<Logout/>}/>
+      <Route path="/registration" element={<Registration/>}/>
+      
+      
+      <Route
+        element={
+          <div>
+            <Navbar />
+            <Outlet />
+          </div>
+        }
+      >
+        <Route index element={<Products />} />
+        <Route path="/single/:productId" element={<Single />} />
+        <Route path="/category/:categoryId" element={<Categorypage />} />
+      </Route>
       
       </Routes>
       </AppContext>
