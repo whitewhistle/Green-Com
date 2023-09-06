@@ -8,6 +8,7 @@ import Categorypage from './components/categorypage';
 import Login from './components/login';
 import Registration from './components/registration';
 import { Outlet } from 'react-router-dom';
+import { Protector } from "./utils/helpers";
 
 
 
@@ -41,9 +42,9 @@ function App() {
           </div>
         }
       >
-        <Route index element={<Products />} />
-        <Route path="/single/:productId" element={<Single />} />
-        <Route path="/category/:categoryId" element={<Categorypage />} />
+        <Route path='/' element={<Protector Component={Products} />} />
+        <Route path="/single/:productId" element={<Protector Component={Single} />}  />
+        <Route path="/category/:categoryId" element={<Protector Component={Categorypage} />}  />
       </Route>
       
       </Routes>

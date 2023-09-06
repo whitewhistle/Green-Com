@@ -54,12 +54,20 @@ export default function Products() {
 
 
   return (
-    
+    <>
+    <div className="homepic" onClick={()=> alert("sorry theres nothing to explore here")}>
+    <img src="https://res.cloudinary.com/farmersfreshzone/image/upload/v1690462847/banner/eyrk9ls3hidu00miboq6.jpg" alt=""/>
 
+    </div>
+    <div className="gap">
 
+    </div>
     <div className="productscontainer">
-     fish  off
-    
+     <div className="containtitle">
+     <div className="productstitle">
+      Deal Of The Day
+     </div>
+     </div>
     <div className="products">
     {products ? (
       
@@ -77,5 +85,7 @@ export default function Products() {
 
 
     </div>
+    </>
   )
+
 }

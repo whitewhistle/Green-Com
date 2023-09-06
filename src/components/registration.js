@@ -4,18 +4,21 @@ import {FormGroup,Input} from 'reactstrap';
 import {useState} from 'react';
 import axios from "axios";
 import './registration.css';
+import { useNavigate } from "react-router-dom";
 
 const initialUser = { email: "", password: "", username: "" };
 export default function Registration() {
   const [user, setUser] = useState(initialUser);
- 
+  const navigate = useNavigate();
 
   const signUp = async() => {
   try {
       const url = `http://localhost:1337/api/auth/local/register`;
       if (user.username && user.email && user.password) {
         const res = await axios.post(url, user);
-        
+        alert("registered in successfully!");
+        setUser(initialUser);
+        navigate("/login");
         }
       }
      

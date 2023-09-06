@@ -7,10 +7,13 @@ import {useEffect, useContext} from "react";
 import { fetchDataFromApi} from "../utils/api";
 import  {Context} from "../utils/context.js";
 import {useNavigate} from "react-router-dom";
+import { userData } from "../utils/helpers";
+import pho from "../assets/Screenshot 2023-09-06 093031.png"
+
 
 export default function Navbar() {
 
-
+  const { username } = userData();
 const { categories, setCategories , products, setProducts,
   cartarray,
   setCart,} = useContext(Context);  
@@ -39,16 +42,18 @@ const getCategories = () => {
 
   const[showCart,setShowCart]=useState(false);
   const[showSearch,setShowSearch]=useState(false);
+
   return (
     <>
     
     <header className='seacrhContainer'>
       <div className='searchContent'>
-      <div className='logo'>
-       fish
+      <div className='logo' onClick= {() => navigate(`/`)}>
+      <img src={pho}/>
+
       </div>
       <div className='searchBar'onClick={()=> setShowSearch(true)}>
-        offf
+      &#x1F50D;
       </div>
       </div>
     </header>
@@ -57,8 +62,6 @@ const getCategories = () => {
     <header className='nav'>
     <div className='navcontent'>
         <div className='left'>
-        
-        
         <ul>
         {categories ? (
       categories.data.map((category, index) => (
@@ -72,14 +75,16 @@ const getCategories = () => {
       <li>Loading...</li>
     )}
   </ul>
-
+  
 
         </div>
         <div className='mid'>
         Green-Com
         </div>
         <div className='right' onClick={()=> setShowCart(true)}>
-         Cart
+         Cart | Wanna 
+         <a href="/logout"> Logout </a>
+         {username}?
         </div>
       
     </div>

@@ -33,7 +33,7 @@ export default function Search({setShowSearch})
                 value={query}
                 onChange={onChange}
                 />
-               <div className="searchclose" onClick={()=> setShowSearch(false)}>offf
+               <div className="searchclose" onClick={()=> setShowSearch(false)}>&#x1F50D;
                 </div>
             </div>
             

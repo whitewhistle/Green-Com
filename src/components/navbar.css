@@ -30,6 +30,7 @@
    display:flex;
    gap:1vw;
    list-style-type:none;
+   padding:0
   }
 
   .left li {
@@ -73,27 +74,28 @@
       cursor: pointer;
   }
 
+  .logo img{
+    
+    height:9vh;
+    width:12vh;
+  }
 
 @media (max-width: 888px)
  {  .navcontent
     {
         gap:0.5vw;
     }
-    .left {
-      display: none;
+    .left li{
+      font-size:calc( 14px + 0.337vw)
     }
     .mid
     {
     font-size: 3.2vh;
+    display: none;
     }
   }
-
-@media (min-width: 888px)
-{
-    .mid
-    {
-     position: absolute;
-     left:50%;
-     transform: translateX(calc(-125px + 2vw));
-    }
+a{
+  color:white;
+  text-decoration: none;
 }
+
