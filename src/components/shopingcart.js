@@ -20,7 +20,7 @@ export default function Shopingcart({setShowCart})
   const handlePayment = async () => {
     try {
         const stripe = await stripePromise;
-        const res = await makePaymentRequest.post("/api/orders", {
+        const res = await makePaymentRequest.post("/orders", {
             products: cartarray,
         });
         await stripe.redirectToCheckout({
@@ -85,10 +85,10 @@ export default function Shopingcart({setShowCart})
         </div>
         <div className="right">
           <div>{product.item}</div>
-          <div>
-            <button onClick={() => onDecrease(product)}>-</button>
+          <div className="but">
+            <span onClick={() => onDecrease(product)} >-</span>
             {product.a}
-            <button onClick={() => onIncrease(product)}>+</button>
+            <span onClick={() => onIncrease(product) }>+</span>
           </div>
           <div>{product.price}</div>
         </div>

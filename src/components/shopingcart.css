@@ -68,6 +68,20 @@
 
 }
 
+.but
+{  font-size:19px;
+   display:flex;
+   justify-content:space-around;
+   align-self: center;
+   align-content: center; 
+   width:7vh;
+   border:3px solid rgb(137, 27, 137);
+   margin-top:2px;
+   margin-bottom: 3px;
+   background-color:rgb(138, 32, 138);
+   color:white;
+   border-radius:3px;
+}
 
 .Panel .content .sub-total .price
 {   padding-top: 0px;

@@ -184,7 +184,9 @@ height:30vh;
   .singlepage .right .Discription
   {
     font-size:calc(12px + 1vw);
-    height:25vh
+    height:25vh;
+    overflow:hidden;
+    text-overflow: ellipsis;
   }
   .singlepage .right .Name
 {
