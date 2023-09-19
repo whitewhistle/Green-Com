@@ -1,16 +1,18 @@
 .layout
-{   display:flex;
+{   
+    display:flex;
     height:80vh;
     width:90vw;
     justify-self: center;
-    margin:50px;
     background-color:white;
+    margin:25px;
     border-radius:20px
 }
 
 .singlepage .left
 {   
     display:flex;
+    justify-self: center;
     justify-content: center;
     align-content:center ;
     width:50vw
@@ -29,12 +31,39 @@ font-weight:500;
 font-size:30px ;
 height:7.5vh;
 }
-.singlepage .right .Price
-{color:rgb(46, 199, 46);
+
+.singlepage .cart-card
+{
+display:flex;
+flex-direction: row;
+gap:3vw;
+align-content: center;
+}
+
+.singlepage .Price
+{
+color:rgb(46, 199, 46);
 font-weight:600;
 font-size:32px ;   
 height:6vh;
 }
+
+.singlepage .cart-card .Quantity
+{  font-size:19px;
+   display:flex;
+   justify-content:space-around;
+   align-self: center;
+   align-content: center;
+   height:25px;
+   width:60px; 
+   border:3px solid rgb(137, 27, 137);
+   margin-top:2px;
+   margin-bottom: 3px;
+   background-color:rgb(138, 32, 138);
+   color:white;
+   border-radius:3px;
+}
+
 .singlepage .right .no
 {
 display:flex;
@@ -56,21 +85,21 @@ font-size:20px ;
 height:30vh;
 }
 
-img
+.singlepage img
 {
  
- Height:60vh;
- width:40vw
+ Height:calc(55vh + 5vw);
+ width:calc(350px + 13vw)
 }
 
 .singlepage{
     display:flex;
-    flex-direction: row;
+    flex-direction: row;  
     justify-self: center;
     align-self: center;
 }
 
-.button1 {
+.singlepage .cart-card .button1 {
     background-color: white;
     color: black;
     border: 3px solid #4CAF50; /* Green */
@@ -82,7 +111,7 @@ img
     margin:5px;
   }
   
-  .button1:hover {
+  .singlepage .cart-card .button1:hover {
     background-color: #4CAF50; /* Green */
     color: white;
     width:250px;
@@ -91,3 +120,78 @@ img
     margin:0px;
 
   }
+
+  .singlepage .cart-card .button1:active {
+    background-color: #ffffff; /* Green */
+    color: white;
+    width:250px;
+    height:35px;
+    border-radius: 10px;
+    margin:0px;
+
+  }
+
+.Singlepage-container
+{
+    display:flex;
+    justify-content: center;
+}
+
+  @media (max-width: 1000px)
+  { .layout
+    {   display: flex;
+        flex-wrap: wrap;
+        height:100vh;
+        width:90vw;
+        justify-content: center;
+        align-content: flex-start;
+        margin:25px;
+        
+
+    }
+    .singlepage{
+        display:flex;
+        flex-wrap:wrap;
+        flex-direction:column;  
+        justify-self: center;
+        align-self: center;
+        justify-content: center;
+        justify-items:center 
+    }
+    .singlepage .left
+{   
+    display:flex;
+    justify-self: center;
+    justify-content: center;
+    align-content:center ;
+    width:60vw
+
+}
+
+.singlepage .right
+{
+    display:flex;
+    flex-direction: column;
+    width:65vw;    
+}
+.singlepage img
+{
+    Height:calc(36vh + 8vw);
+    width:calc(170px + 28vw) 
+}
+
+
+  .singlepage .right .Discription
+  {
+    font-size:calc(12px + 1vw);
+    height:25vh;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+  .singlepage .right .Name
+{
+font-weight:500;
+font-size:calc(25px + 0.2vw)  ;
+height:7.5vh;
+}
+}

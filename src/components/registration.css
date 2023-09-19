@@ -1,0 +1,102 @@
+.registercontainer
+{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-wrap:wrap;
+    align-content: center;
+    justify-content:center;
+}
+
+
+.registermargin
+{
+    background-color: white;
+    padding:8px;
+    border: 2px solid rgb(0, 55, 255);
+    border-radius: 10px;
+}
+
+
+
+.registerPanel{
+    width:27vw;
+    height:38vh;
+    background-color:white ;
+    display:flex;
+    border:2px solid rgb(0, 81, 255);
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.registerPanel .title
+{   padding-top:5vh;
+    height:4vh;
+    font-weight: 600;
+    font-size: 3Svh;
+}
+
+.registerPanel .inputer
+{  height:5vh;
+   border:2px solid green;
+   display:flex;
+   padding:3px;
+   border-radius:5px;
+}
+
+.registerPanel .inputer input
+{
+    border: none;
+    outline: none;
+width:25vw;
+}
+
+.registerPanel button
+{
+    height:3.2vh;
+    display:flex;
+    flex-wrap: wrap;
+    align-content: center;
+    border:5px double black;
+    transition: 1s
+    
+}
+.registerPanel button:hover
+{
+    height:3.2vh;
+    font-size: 2.5vh;
+    border-radius:5px;
+    border:5px double black;
+
+}
+
+@media (max-width:1150px)
+{
+    .registerPanel{
+        width:301.5px;
+    }
+
+    .registerPanel .inputer input
+{
+    border: none;
+    outline: none;
+    width:287.5px
+}
+}
+
+.containtitle
+{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-content:center;
+    padding-top:10px;
+
+}
+
+.productstitle
+{
+    font-size:5.5vh;
+    font-weight: 500;
+}

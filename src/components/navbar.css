@@ -1,6 +1,9 @@
 .nav {
     width: 100%;
     background-color: #2db457;
+    position: sticky; 
+    top: 0;
+    z-index: 98;
   }
   
   .navcontent {
@@ -9,14 +12,13 @@
     padding: 0 7vw;
     align-items: center;
     justify-content: space-between;
-    height:8vh;
+    height:7vh;
     color:white;
     gap:1vw;
-      
     font-weight: 100;
-   
+
   }
-  
+
   .left {
     display: flex;
     justify-content: space-evenly;
@@ -28,6 +30,7 @@
    display:flex;
    gap:1vw;
    list-style-type:none;
+   padding:0
   }
 
   .left li {
@@ -43,28 +46,56 @@
     font-family: "Courier new";
   }
   
+  .right
+  {
+    cursor: pointer;
+  }
   
+
+  .searchContent
+  {
+    display: flex;
+    padding: 0 7vw;
+    align-items: center;
+    justify-content: space-between;
+    height:9vh;
+    background-color:white;
+    color:#008e2d;
+    gap:1vw;
+    font-weight: 400;
+    flex-flow: row;
+  }
+  .searchBar
+  {   
+      position:relative;
+
+      transform:translateX(1px);
+      transform:translateY(5px);
+      cursor: pointer;
+  }
+
+  .logo img{
+    
+    height:9vh;
+    width:12vh;
+  }
 
 @media (max-width: 888px)
  {  .navcontent
     {
         gap:0.5vw;
     }
-    .left {
-      display: none;
+    .left li{
+      font-size:calc( 14px + 0.337vw)
     }
     .mid
     {
     font-size: 3.2vh;
+    display: none;
     }
   }
-
-@media (min-width: 888px)
-{
-    .mid
-    {
-     position: absolute;
-     left:50%;
-     transform: translateX(calc(-125px + 2vw));
-    }
+a{
+  color:white;
+  text-decoration: none;
 }
+
