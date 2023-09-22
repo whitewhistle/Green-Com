@@ -5,6 +5,7 @@ import {useState} from 'react';
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
 import { storeUser } from "../utils/helpers";
+import { fetchDataFromApi } from '../utils/api';
 
 
 export default function Login() {
@@ -23,25 +24,55 @@ export default function Login() {
             }
         ))
      };
-     const handleLogin = async() => 
+
+    const handleLogin = async() => 
      {
-        const url = 'http://localhost:1337/api/auth/local';
+        const url = 'http://localhost:1337/api/auth/local?populate=*';
        try{
           if(user.identifier && user.password)
-          {
+          { 
+
             const {data} = await axios.post(url, user);
-            console.log( data.jwt );
+            console.log(data)
             const token = data.jwt;
             setToken(token);
             console.log( data.user.username );
+            const id=data.user.id;          
+                      
+
+            fetchDataFromApi(`/api/users/${id}?populate=*`)
+            .then((res) => {
+             const role=res.role.name;
+            console.log(res.role.name);
+
+            if (data.jwt && role=="psuadmins")    
+            { 
+              storeUser(data,role);
+              setUser(initialUser);
+              alert("Logged in successfully as admin!");
+              navigate("/admin");
+            }
+            
+            else if (data.jwt)    
+            { 
+              storeUser(data,role);
+              setUser(initialUser);
+              alert("Logged in successfully!");
+              navigate("/");
+            }
+            
+
+
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+
           
-          if (data.jwt)  
-          { 
-            storeUser(data);
-            setUser(initialUser);
-            alert("Logged in successfully!");
-            navigate("/");
-          }
+
+
+
+          
 
           return token;
           }

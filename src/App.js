@@ -7,8 +7,12 @@ import AppContext from './utils/context';
 import Categorypage from './components/categorypage';
 import Login from './components/login';
 import Registration from './components/registration';
+import Admin from './components/admin';
+import Users from './components/users';
 import { Outlet } from 'react-router-dom';
-import { Protector } from "./utils/helpers";
+import { Protector} from "./utils/helpers";
+import Adbar from './components/adbar';
+import Proentry from './components/proentry';
 
 
 
@@ -46,7 +50,27 @@ function App() {
         <Route path="/single/:productId" element={<Protector Component={Single} />}  />
         <Route path="/category/:categoryId" element={<Protector Component={Categorypage} />}  />
       </Route>
+
+
+      <Route
+        element={
+          <div style={{ display: 'flex' }}>
+          <div style={{ flex: '1', marginRight: '20px' }}>
+            <Adbar />
+          </div>
+          <div style={{ flex: '4.5' }}>
+            <Outlet />
+          </div>
+        </div>
+        }
+      >
+        <Route path='/admin' element={<Protector Component={Admin} />} />
+        <Route path='/users' element={<Protector Component={Users} />} />
+        <Route path='/proentry' element={<Protector Component={Proentry} />} />
+      </Route>
       
+      
+
       </Routes>
       </AppContext>
     </Router>

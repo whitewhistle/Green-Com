@@ -5,6 +5,8 @@ const AppContext =({children }) => {
     const [categories, setCategories] = useState();
     const [products, setProducts] = useState();
     const [cartarray, setCart]=useState([]);
+    const [update, setUpdate]=useState(0);
+    const [users, setUsers] = useState();
 
     return <Context.Provider value ={{
     categories,
@@ -13,6 +15,10 @@ const AppContext =({children }) => {
     setProducts,
     cartarray,
     setCart,
+    update,
+    setUpdate,
+    users,
+    setUsers
 
     }}> 
         

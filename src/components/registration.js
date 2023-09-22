@@ -16,6 +16,8 @@ export default function Registration() {
       const url = `http://localhost:1337/api/auth/local/register`;
       if (user.username && user.email && user.password) {
         const res = await axios.post(url, user);
+        console.log(user)
+        console.log(res)
         alert("registered in successfully!");
         setUser(initialUser);
         navigate("/login");

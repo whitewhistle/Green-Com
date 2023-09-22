@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const storeUser = (data) => {
+export const storeUser = (data,role) => {
   localStorage.setItem(
     "user",
     JSON.stringify({
       username: data.user.username,
       jwt: data.jwt,
+      role: role
     })
   );
 };
@@ -14,6 +15,7 @@ export const storeUser = (data) => {
 export const userData = () => {
   const stringifiedUser = localStorage.getItem("user") || '""';
   return JSON.parse(stringifiedUser || {});
+
   
 };
 
@@ -22,16 +24,37 @@ export const userData = () => {
 export const Protector = ({ Component }) => {
   const navigate = useNavigate();
 
-  const { jwt } = userData();
+  const { role,jwt } = userData();
+  
+  var parts = jwt.split('.');
+  var payload = parts[1];
+  const decodedjwt=atob(payload);
+  const payloadObj = JSON.parse(decodedjwt);
+  const expirationTime = payloadObj.exp;
+  const currentTimestamp = Math.floor(Date.now() / 1000);
+  
 
-  useEffect(() => {
-    if (!jwt) {
-      navigate("/login");
+  useEffect(() => 
+  {
+    if (!jwt && currentTimestamp <= expirationTime || role=="Authenticated") {
+      navigate("/");
+      console.log("passb");
     }
-  }, [navigate, jwt]);
+    
+    else if (jwt && currentTimestamp <= expirationTime && role=="psuadmins") {
+      navigate("/admin");
+      console.log("passa");
+    }
+    else{
+    navigate("/");
+    }
+
+  }, [jwt]);
 
   return <Component />;
 };
+
+
 
 
 

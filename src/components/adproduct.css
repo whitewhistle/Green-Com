@@ -1,0 +1,114 @@
+
+.adSlot
+{
+    background-color:white;
+    margin:1%;
+    Margin-top:5px;
+    padding:1%;
+    
+    height:30px;
+    border-radius: 10px;
+    width:96%;
+    display: flex;
+    flex-flow: row;
+    
+}
+
+
+.adImag
+{
+
+flex:1;
+
+}
+
+.adSlot img
+{   
+    flex:1;
+    height:30px;
+    width:30px;
+    transition: transform 0.3s ease
+
+}
+
+
+
+.adSlot img:hover 
+{
+    transform: scale(1.15);
+}
+
+
+
+.adDetails
+{
+flex:8;
+font-size: larger;
+display: flex;
+flex-flow: row;
+}
+
+.adDetails .adName
+
+{   flex:1;
+    font-size: 15px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.adid
+
+{   flex:1;
+    font-size: 15px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.adDetails .adDescription
+{   flex:3;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 16px; /* Adjust as needed to control the height of one line */
+    padding: 5px;
+    font-size: 15px;
+    color: rgb(90, 90, 90);
+
+    white-space: normal;
+}
+
+.adDetails .adPrice
+{   flex:1;
+    color:rgb(46, 199, 46);
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    
+}
+.adDetails .adaction
+{   flex:1;
+    color:rgb(68, 68, 68);
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+
+
+@media (max-width: 400px)
+{
+    img
+{ 
+    height:calc(200px - 5vw);
+    width:calc(250px - 5vw);
+}
+
+}
