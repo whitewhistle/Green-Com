@@ -74,7 +74,7 @@ export default function Proentry() {
         
 
         setProentry(initialEntry);
-        await Iupload();
+        await Iupload(res.data.data.id);
 
     } catch (error) {
       console.error(error);
@@ -83,7 +83,7 @@ export default function Proentry() {
   
   
     
-  const Iupload = async () => {
+  const Iupload = async (idy) => {
     try {
       
       let formdata=new FormData();
@@ -91,7 +91,7 @@ export default function Proentry() {
       formdata.append('ref', "api::product.product");
       formdata.append('field', "img");
       formdata.append('files', file);
-      formdata.append('refId', id);
+      formdata.append('refId', idy);
       console.log(id);
       console.log(file);
       console.log(Img);    
@@ -155,7 +155,7 @@ export default function Proentry() {
     <div className='pregistercontainer'>
       <div className='pregistermargin'>
         <div className='pregisterPanel'>
-          <div className='title'>Please add 1 buffer entry</div>
+          <div className='title'>Please add entry</div>
           <div className='inputer'>
             <input
               type="text"

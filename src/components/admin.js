@@ -50,7 +50,7 @@ export default function Admin() {
       <div className="EntryButton" onClick= {() => navigate(`/proentry`)}>
       + Create new entry
       </div>
-    
+  
     </div>
     <div className="productadcontainer">
     
