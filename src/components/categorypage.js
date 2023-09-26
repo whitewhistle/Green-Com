@@ -7,6 +7,10 @@ import  {Context} from "../utils/context.js";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import {useNavigate} from "react-router-dom";
+import phov from '../assets/vegetable.png';
+import phof from '../assets/fruit.png';
+import phos from '../assets/salad.png';
+
 
 
 export default function Categorypage() {
@@ -14,7 +18,9 @@ export default function Categorypage() {
   const { categories, setCategories , products, setProducts,
     cartarray,
     setCart,} = useContext(Context);  
+  
   const { categoryId } = useParams();
+
 
   useEffect(() => {
     getProducts();
@@ -33,7 +39,20 @@ export default function Categorypage() {
       });
   };
   
+  let pho;
 
+  if (categoryId=="Vegetables")
+  {
+     pho=phov;
+  }
+  else if (categoryId=="Fruits")
+  {
+     pho=phof;
+  }
+  else if (categoryId=="Salads")
+  {
+     pho=phos;
+  }
 
 
   return (
@@ -42,8 +61,14 @@ export default function Categorypage() {
     <div className="categoryheading">
     {categoryId}
     </div>
+
+
     </div>
     
+    <div className="catecontain">
+      <img className="cateban" src={pho}/>
+    </div>
+
     <div className="products">
     {products ? (
       

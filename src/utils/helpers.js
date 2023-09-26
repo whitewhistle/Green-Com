@@ -26,32 +26,44 @@ export const Protector = ({ Component }) => {
 
   const { role,jwt } = userData();
   
-  var parts = jwt.split('.');
-  var payload = parts[1];
-  const decodedjwt=atob(payload);
-  const payloadObj = JSON.parse(decodedjwt);
-  const expirationTime = payloadObj.exp;
-  const currentTimestamp = Math.floor(Date.now() / 1000);
-  
+
+
 
   useEffect(() => 
-  {
-    if (!jwt && currentTimestamp <= expirationTime || role=="Authenticated") {
+  { 
+    if (!jwt)
+    {
+      navigate("/login");
+    }
+
+    else
+    {
+      var parts = jwt.split('.');
+      var payload = parts[1];
+      const decodedjwt=atob(payload);
+      const payloadObj = JSON.parse(decodedjwt);
+      const expirationTime = payloadObj.exp;
+      const currentTimestamp = Math.floor(Date.now() / 1000);
+
+
+    if (currentTimestamp <= expirationTime && role=="Authenticated") {
       navigate("/");
       console.log("passb");
     }
     
-    else if (jwt && currentTimestamp <= expirationTime && role=="psuadmins") {
+    else if (currentTimestamp <= expirationTime && role=="psuadmins") {
       navigate("/admin");
       console.log("passa");
     }
     else{
-    navigate("/");
+    navigate("/login");
+    }
     }
 
   }, [jwt]);
 
   return <Component />;
+  
 };
 
 

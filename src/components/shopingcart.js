@@ -6,6 +6,8 @@ import {Context} from '../utils/context.js';
 import { loadStripe } from "@stripe/stripe-js";
 import { makePaymentRequest } from "../utils/api";
 
+  
+
 export default function Shopingcart({setShowCart}) 
 {
 
@@ -38,12 +40,12 @@ export default function Shopingcart({setShowCart})
       sum=sum + cartItem.a * cartItem.price;
     });
 
-  
-    console.log(cartarray);
+
 
     const onIncrease = (product) => {
+
       const updatedCart = cartarray.map((item) => {
-        if (item.id == product.id) {
+        if (item.item == product.item) {
           return { ...item, a: item.a + 1 };
         }
         return item;
@@ -53,7 +55,8 @@ export default function Shopingcart({setShowCart})
   
     const onDecrease = (product) => {
       const updatedCart = cartarray.map((item) => {
-        if (item.id == product.id ) {
+        if (item.item == product.item ) {
+          console.log(item);
           return { ...item, a: item.a - 1 };
         }
         return item;
@@ -78,6 +81,11 @@ export default function Shopingcart({setShowCart})
 
             {cartarray ? (
   cartarray.map((product, index) => (
+
+
+
+
+    
     product.a > 0 ? (
       <div className='sub-items' key={index}>
         <div className="left">
@@ -93,7 +101,8 @@ export default function Shopingcart({setShowCart})
           <div>{product.price}</div>
         </div>
       </div>
-    ) : null // If product.a is not greater than 0, render null
+    ) : null 
+
   ))
 ) : (
   <li>Loading...</li>

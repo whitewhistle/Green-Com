@@ -13,7 +13,8 @@ import { Outlet } from 'react-router-dom';
 import { Protector} from "./utils/helpers";
 import Adbar from './components/adbar';
 import Proentry from './components/proentry';
-
+import Banner from './components/banner';
+import Newletter from './components/newletter';
 
 
 import Logout from './components/logout';
@@ -32,8 +33,12 @@ function App() {
     <Router>
     <AppContext>
       
+       
+
       <Routes>
+      
       <Route path="/login" element={<Login/>}/>
+      <Route path="/banner" element={<Banner/>}/>
       <Route path="/logout" element={<Logout/>}/>
       <Route path="/registration" element={<Registration/>}/>
       
@@ -43,6 +48,7 @@ function App() {
           <div>
             <Navbar />
             <Outlet />
+            <Newletter/>
           </div>
         }
       >

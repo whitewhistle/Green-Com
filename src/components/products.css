@@ -7,9 +7,25 @@
     justify-content: space-around;
    
 }
-.productscontainer
+
+.blue
+
 {
-    background-color: rgba(255, 255, 255, 0.648);
+    display:flex;
+    background-color:rgb(24, 90, 255);
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content:center;
+    width:100vw;
+    padding-bottom: 20vh;
+}
+
+.productscontainerh
+{   margin:2vw;
+    border-radius: 30px;
+    padding-top: 20px;
+    background-color: rgb(255, 255, 255);
+    width:96vw
     
 }
 .homepic
@@ -27,4 +43,71 @@
     width:100%;
     height:12vh;
     background-color: white;
+}
+
+.newlet
+{
+    width:100vw;
+    height:65vh
+}
+
+.newletcontainer
+{
+    width:100vw;
+    height:65vh;
+    
+}
+
+.somecontainer
+{
+    width:100vw;
+    height:60vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(255, 255, 255);
+
+}
+.some
+
+{
+
+position:absolute;
+transform: translateY(-15vh);
+height:30vh;
+width:80vw;
+
+}
+
+.farmer
+{
+ 
+ position: relative;
+ width:90vw;
+ transform: translateY(+5vh);
+  
+}
+
+
+
+@media (max-width:1000px)
+{
+
+    .newlet
+    {
+        width:1000px;
+        height:65vh;
+    }
+    
+    .newletcontainer
+    {
+
+        width:100vw;
+        height:65vh;
+        overflow: hidden;
+        
+        
+    }
+
 }

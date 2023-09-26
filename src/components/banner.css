@@ -1,0 +1,143 @@
+.parallax
+{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height:40vh;
+    background-color: #2db457;
+
+}
+
+.parallax .heading
+{
+   
+    font-size: xx-large;
+    font-weight: 800;
+
+}
+
+.re{
+    position: relative;
+    height:50vh;
+    width: 900px;
+    margin-top:6vh;
+    transform: translateX(-10vw);
+    
+}
+
+.temp
+{   
+    position:absolute;
+    width:900px;
+    height:65vh;
+    margin-top: 15vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.91);
+    border-radius: 10px
+}
+.temp2
+{   
+    position:absolute;
+    object-fit: contain;
+    width:900px;
+    height:65vh;
+    margin-top: 15vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.437);
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.second
+{   
+ 
+    margin-top: 15vh;
+    height:120vh;
+ 
+    width:100vw;
+    background-color: rgb(25, 90, 255);
+    
+    display:flex;
+    flex-wrap: wrap;
+ 
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.bakchodi
+{
+    margin-top:12vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    font-size: 1.7vw;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+ 
+
+@media (max-width: 1000px)
+ {  
+
+
+    .re{
+        position: relative;
+        height:27vh + 16vw;
+        width: 92.3vw;
+        margin-top:5vh;
+        transform: translateX(-100vw);
+        
+    }
+    
+    .temp
+    {   
+        position:absolute;
+        width:calc(92.3vw);
+        height:calc(35vh + 23vw);
+        margin-top: 15vh;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.91);
+        border-radius: 10px
+    }
+    .temp2
+    {   
+        position:absolute;
+        object-fit: contain;
+        width:calc(92.3vw);
+        height:calc(35vh + 23vw);
+        margin-top: 15vh;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.437);
+        border-radius: 10px;
+        overflow: hidden;
+    
+    }
+    
+    .second
+    {   
+     
+        margin-top: 15vh;
+        height:120vh;
+     
+        width:100vw;
+        background-color: rgb(25, 90, 255);
+        
+        display:flex;
+        flex-wrap: wrap;
+     
+        justify-content: center;
+        align-content: center;
+        
+        
+    }
+    
+    .bakchodi
+    {
+        margin-top:12vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        font-size: 15px;
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+    }
+
+
+  }

@@ -21,6 +21,23 @@ useEffect(() => {
   getCategories();
 }, []);
 
+
+
+const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  
+
+
 const navigate=useNavigate();
 
 const getCategories = () => {
@@ -37,6 +54,7 @@ const getCategories = () => {
 };
 
 
+const headerClassName = scrollY > 64 ? 'nav-with-box-shadow' : 'nav';
 
 
 
@@ -59,7 +77,7 @@ const getCategories = () => {
     </header>
 
 
-    <header className='nav'>
+    <header className={headerClassName}>
     <div className='navcontent'>
         <div className='left'>
         <ul>
@@ -69,6 +87,7 @@ const getCategories = () => {
         > 
           <li onClick= {() => navigate(`/category/${category.attributes.title}`)}>{category.attributes.title}</li>
           {index < categories.data.length - 1 && <li>|</li>}
+
         </React.Fragment>
       ))
     ) : (

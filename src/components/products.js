@@ -6,6 +6,10 @@ import { fetchDataFromApi} from "../utils/api";
 import  {Context} from "../utils/context.js";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import Banner from './banner';
+
+import some from '../assets/some.jpg';
+import farmer from '../assets/farmer.jpg';
 
 
 export default function Products() {
@@ -55,14 +59,15 @@ export default function Products() {
 
   return (
     <>
-    <div className="homepic" onClick={()=> alert("sorry theres nothing to explore here")}>
-    <img src="https://res.cloudinary.com/farmersfreshzone/image/upload/v1690462847/banner/eyrk9ls3hidu00miboq6.jpg" alt=""/>
+    
+    <Banner/>
+     
+    <div className="blue">
 
-    </div>
-    <div className="gap">
+    
 
-    </div>
-    <div className="productscontainer">
+   
+    <div className="productscontainerh">
      <div className="containtitle">
      <div className="productstitle">
       Deal Of The Day
@@ -85,6 +90,13 @@ export default function Products() {
 
 
     </div>
+    </div>
+    
+    <div className="somecontainer">
+      <img src={some} className="some"/>
+      <img src={farmer} className="farmer"/>
+    </div>
+
     </>
   )
 

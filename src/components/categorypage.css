@@ -18,6 +18,22 @@
     justify-content: center;
 }
 
+.catecontain
+{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.cateban
+{
+    width:70vw;
+    height:60vh;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px black;
+}
+
 .categoryheading
 { 
   font-size: 4vh;
@@ -28,4 +44,48 @@
   left:0%;
   right:50%;
   border-bottom: 3px solid #2DB457;
+  margin-bottom: 5vh;
 }
+
+@media (max-width: 1000px)
+ {
+    
+    .cateban
+{
+    width:700px;
+    height:60vh;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px black;
+}
+
+
+
+
+
+ }
+
+@media (max-width: 700px)
+ {
+    
+    .cateban
+{
+    width:700px;
+    height:60vh;
+    border-radius: 0px;
+    box-shadow: 0px 0px 15px black;
+}
+
+
+
+.catecontain
+{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: start;
+    align-content: center;
+    overflow: hidden;
+}
+
+ }
+
+    
